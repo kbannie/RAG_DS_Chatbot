@@ -23,8 +23,10 @@ def get_session_history(session_id: str) -> BaseChatMessageHistory:
 
 def get_retriever():
     embedding = OpenAIEmbeddings(model='text-embedding-3-large')
-    index_name = 'ds-markdown'
+    index_name = 'ds-markdown-clean'
     database = PineconeVectorStore.from_existing_index(index_name=index_name, embedding=embedding)
+    
+    
     retriever = database.as_retriever(search_kwargs={'k': 4})
     return retriever
 
@@ -127,8 +129,8 @@ def get_rag_chain():
 def get_ai_response(user_message):
     dictionary_chain = get_dictionary_chain()
     rag_chain = get_rag_chain()
-    tax_chain = {"input": dictionary_chain} | rag_chain
-    ai_response = tax_chain.stream(
+    ds_chain = {"input": dictionary_chain} | rag_chain
+    ai_response = ds_chain.stream(
         {
             "question": user_message
         },
@@ -138,4 +140,3 @@ def get_ai_response(user_message):
     )
 
     return ai_response
-
