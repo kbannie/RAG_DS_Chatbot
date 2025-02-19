@@ -27,7 +27,7 @@ for message in st.session_state.message_list:
 def get_ai_message(user_message):
 
     embedding = OpenAIEmbeddings(model='text-embedding-3-large')
-    index_name = 'ds-chatbot'
+    index_name = 'ds-markdown'
     database = PineconeVectorStore.from_existing_index(index_name=index_name, embedding=embedding)
 
     llm = ChatOpenAI(model='gpt-4o')
