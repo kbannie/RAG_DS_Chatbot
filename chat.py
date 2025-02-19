@@ -1,13 +1,7 @@
 import streamlit as st
 
-from langchain_core.output_parsers import StrOutputParser
-from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains import RetrievalQA
-from langchain import hub
-from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
-from langchain_openai import OpenAIEmbeddings
-from langchain_pinecone import PineconeVectorStore
+from llm import get_ai_message
 
 st.set_page_config(page_title="덕성여대 규정 챗봇", page_icon="🤖")
 
@@ -23,24 +17,6 @@ for message in st.session_state.message_list:
     with st.chat_message(message["role"]):
         st.write(message["content"])
 
-
-def get_ai_message(user_message):
-
-    embedding = OpenAIEmbeddings(model='text-embedding-3-large')
-    index_name = 'ds-markdown'
-    database = PineconeVectorStore.from_existing_index(index_name=index_name, embedding=embedding)
-
-    llm = ChatOpenAI(model='gpt-4o')
-    prompt = hub.pull("rlm/rag-prompt")
-    retriever = database.as_retriever(search_kwargs={'k': 4})
-
-    qa_chain = RetrievalQA.from_chain_type(llm, retriever=retriever, chain_type_kwargs={"prompt": prompt})
-
-    ds_chain = qa_chain
-    
-    ai_message = ds_chain.invoke({"query": user_message})
-
-    return ai_message['result']
 
 
 if user_question := st.chat_input(placeholder="덕성여대 규정에 관련된 궁금한 내용들을 말씀해주세요!"):
