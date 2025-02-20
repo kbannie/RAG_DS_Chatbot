@@ -1,6 +1,13 @@
 # 🤖 DS Chatbot
 
-This project is a chatbot designed to provide users with information about the academic regulations of **Duksung Women’s University**. The chatbot leverages **Retrieval-Augmented Generation (RAG) and LangChain** to retrieve relevant data and generate accurate, context-aware responses.
+This project is a chatbot designed to provide users with information about the academic regulations of **Duksung Women’s University**. The chatbot leverages **Retrieval-Augmented Generation (RAG) and LangChain** to retrieve relevant data and generate accurate, context-aware responses. 
+
+You can check the DS chatbot at [this link](https://ds-chatbot.streamlit.app).
+
+<img src="https://github.com/user-attachments/assets/16cc92e6-e521-4de2-bdc3-12e09371f351" 
+     alt="image" width="500" 
+     style="border: 2px solid black; border-radius: 10px; box-shadow: 5px 5px 15px rgba(0,0,0,0.3);"/>
+
 
 ## Installation & Usage
 ### 1. Set up Python Environment
