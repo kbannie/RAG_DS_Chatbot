@@ -106,7 +106,6 @@ langchain-community==0.3.17
 langchain-core==0.3.36
 langchain-openai==0.2.14
 langchain-pinecone==0.2.3
-langchain-teddynote @ git+https://github.com/teddylee777/langchain-teddynote.git@05339abbd0ff99c1c84c452939d9461504a178ee
 langchain-tests==0.3.12
 langchain-text-splitters==0.3.6
 langgraph==0.2.74
