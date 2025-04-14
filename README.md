@@ -39,3 +39,5 @@ streamlit run chat.py
 - Regulation Source : [Duksung Women's University Academic Regulations](https://rule.duksung.ac.kr/lmxsrv/main/main.do)
 - Data Storage : [Google Drive](https://drive.google.com/drive/folders/1gbaiF2jGaYUOm6-O_ETSQLeOuOnlHBi6?usp=sharing)
 - Notion Page : [DS Chatbot - Notion](https://kabeenportfolio.notion.site/DS-Chatbot-19ed35bbb00b806bbbafef96d748f81d)
+# samsung-chatbot
+# samsung-chatbot
